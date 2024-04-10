@@ -8,3 +8,4 @@ Arduino pro mini is used for this project, could be easily modified for other de
 Pinout can be seen in comments.
 Coffee machine uses 9 74HC595 shift registers to store bitstream of the current row to be displayed (1 1/2 of 9 '595s are used for row selection, others are for column selection).
 In current state, needs u8g2 lib.
+Since we're reading pin inputs with software instead of hardware SPI (because of obscure 71-byte bit-stream length from the machine), timing is very critical (frequency is ~90kHz). We're collecting single frame worth of data and display it immidiately. Display routine will few frames but it would not make visual impact since original screen data is rarely refreshed.
