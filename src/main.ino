@@ -135,7 +135,6 @@ void state3() {
 
 // enough data for display
 void state4() {
-  interrupts();
   u8g2.clearBuffer();
 //    u8g2.drawBitmap(35, 26, 8, 12, disp);
 
@@ -155,6 +154,7 @@ void state4() {
   for (int i = 0; i < 96; i++) {
     disp[i] = 0;
   }
+  interrupts();
   u8g2.updateDisplayArea(0, 2, 16, 4);
 //  u8g2.sendBuffer();
   noInterrupts();
