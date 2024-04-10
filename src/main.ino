@@ -8,7 +8,7 @@
 #define COL59 0b00001000
 #include <U8g2lib.h>
 #include <Wire.h>
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
+U8G2_SSD1312_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
 bool oldclk = false;
 uint8_t state = 0;
 uint8_t clkNum = 0;
@@ -137,8 +137,26 @@ void state3() {
 void state4() {
   interrupts();
   u8g2.clearBuffer();
-  u8g2.drawBitmap(20, 10, 8, 12, disp);
-  u8g2.sendBuffer();
+//    u8g2.drawBitmap(35, 26, 8, 12, disp);
+
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      int cx = i * 8 + j;
+      for (int k = 0; k < 12; k++) {
+        if (disp[i + k * 8] & (0b10000000 >> j)) {
+          u8g2.drawPixel(cx * 2 + 5, k * 2 + 20);
+          u8g2.drawPixel(cx * 2 + 6, k * 2 + 20);
+          u8g2.drawPixel(cx * 2 + 5, k * 2 + 21);
+          u8g2.drawPixel(cx * 2 + 6, k * 2 + 21);
+        }
+      }
+    }
+  }
+  for (int i = 0; i < 96; i++) {
+    disp[i] = 0;
+  }
+  u8g2.updateDisplayArea(0, 2, 16, 4);
+//  u8g2.sendBuffer();
   noInterrupts();
   for (uint8_t i = 0; i < 96; i++) {
     disp[i] = 0;
