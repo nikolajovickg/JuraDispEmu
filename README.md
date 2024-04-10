@@ -7,3 +7,4 @@ Right now, it scales up coffee machine display output by the factor of 2 to fill
 Arduino pro mini is used for this project, could be easily modified for other dev boards.
 Pinout can be seen in comments.
 Coffee machine uses 9 74HC595 shift registers to store bitstream of the current row to be displayed (1 1/2 of 9 '595s are used for row selection, others are for column selection).
+In current state, needs u8g2 lib.
