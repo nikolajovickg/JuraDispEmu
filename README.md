@@ -10,4 +10,5 @@ Coffee machine uses 9 74HC595 shift registers to store bitstream of the current 
 In current state, needs u8g2 lib.
 Since we're reading pin inputs with software instead of hardware SPI (because of obscure 71-byte bit-stream length from the machine), timing is very critical (frequency is ~90kHz). We're collecting single frame worth of data and display it immidiately, after which we repeat the process.
 
+![Display1](https://github.com/nikolajovickg/JuraDispEmu/assets/8313782/c548102c-9a04-48ad-88c0-1de94d061c3b)
 
