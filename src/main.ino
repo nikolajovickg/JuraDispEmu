@@ -1,7 +1,7 @@
 // PIN2 - Clock
 // PIN7 - Data
-// PIN3 - Load
-// PIN4 - COL59
+// PIN3 - COL59
+// PIN4 - Load
 #define CLK 0b00000100
 #define DATA 0b10000000
 #define LOAD 0b00010000
