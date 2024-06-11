@@ -12,5 +12,8 @@ Since we're reading pin inputs with software instead of hardware SPI (because of
 Current (as of april 10th 2024) U8G2 version doesn't support 128x32 SSD1312, I've used constructor for 128x64, and made 16px y offset. Added 4 pixels more of y offset to center the image.
 ![Display1](https://github.com/nikolajovickg/JuraDispEmu/assets/8313782/c548102c-9a04-48ad-88c0-1de94d061c3b)
 ![Display2](https://github.com/nikolajovickg/JuraDispEmu/assets/8313782/31543d30-4a98-4ef8-897e-5ab858060893)
+Wiring schematic:
+![jura](https://github.com/nikolajovickg/JuraDispEmu/assets/8313782/c79c595a-cb53-4361-b5a1-34a47bc645cb)
+
 
 
